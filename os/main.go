@@ -7,9 +7,11 @@ import (
 
 func main() {
 	pid := os.Getpid()
+
 	fmt.Println(pid)
 
 	gomod, err := os.Open("go.mod")
+
 	defer gomod.Close()
 	if os.IsNotExist(err) {
 		fmt.Println("文件不存在")
